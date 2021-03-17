@@ -1,5 +1,5 @@
 # music_realm
-
+A music sharing forum designed for BUAASE JavaEE
 ## Project setup
 ```
 npm install
@@ -22,3 +22,6 @@ npm run lint
 
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
+# MusicRealm
+
+
