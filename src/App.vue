@@ -2,6 +2,7 @@
   <div id="app">
     <img src="./assets/logo.png">
     <div>
+      <Layout></Layout>
       <p>
         If Element is successfully added to this project, you'll see an
         <code v-text="'<el-button>'"></code>
@@ -15,11 +16,13 @@
 
 <script>
 import HelloWorld from './components/HelloWorld.vue'
+import Layout from "./components/Layout.vue";
 
 export default {
   name: 'app',
   components: {
-    HelloWorld
+    HelloWorld,
+    Layout,
   }
 }
 </script>
@@ -31,6 +34,14 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
+  margin-top: 0px;
+  position: absolute;
+  right: 0px;
+  top: 0px;
+  left: 0px;
+  bottom: 0px;
+  background-image: url("./images/example.png");
+  background-repeat: no-repeat;
+  background-size:100% 100%;
 }
 </style>
