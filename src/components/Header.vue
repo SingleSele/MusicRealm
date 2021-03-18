@@ -1,22 +1,11 @@
 <template>
-  <div>
-    <el-menu :default-active="activeIndex" class="el-menu-demo" mode="horizontal" @select="handleSelect">
-      <el-menu-item index="1">处理中心</el-menu-item>
-      <el-submenu index="2">
-        <template slot="title">我的工作台</template>
-        <el-menu-item index="2-1">选项1</el-menu-item>
-        <el-menu-item index="2-2">选项2</el-menu-item>
-        <el-menu-item index="2-3">选项3</el-menu-item>
-        <el-submenu index="2-4">
-          <template slot="title">选项4</template>
-          <el-menu-item index="2-4-1">选项1</el-menu-item>
-          <el-menu-item index="2-4-2">选项2</el-menu-item>
-          <el-menu-item index="2-4-3">选项3</el-menu-item>
-        </el-submenu>
-      </el-submenu>
-      <el-menu-item index="3" disabled>消息中心</el-menu-item>
-      <el-menu-item index="4"><a href="https://www.ele.me" target="_blank">订单管理</a></el-menu-item>
-    </el-menu>
+  <div class="nav-bar">
+    <div id="nav-icon">--图标--</div>
+    <div class="nav-bar-item" v-for="item in data().navItems" :key="item.key" :path="item.keyPath">
+      <div>{{item.key}}</div>
+    </div>
+    <div id="search-bar">-----------------搜索框------------</div>
+    <div id="user-icon">登录/注册</div>
   </div>
 </template>
 
@@ -25,18 +14,64 @@
     name: "Header",
     data(){
       return {
-        activeIndex: '1',
-
+        data(){
+          return {
+            navItems: [
+              {key: "音乐史", keyPath: ""},
+              {key: "作词", keyPath: ""},
+              {key: "作曲", keyPath: ""},
+              {key: "混音", keyPath: ""},
+              {key: "乐器", keyPath: ""},
+              {key: "软件", keyPath: ""},
+              {key: "音源", keyPath: ""},
+              {key: "采样包", keyPath: ""},
+            ]
+          }
+        }
       }
     },
     methods: {
-      handleSelect(key, keyPath) {
-        console.log(key, keyPath);
-      }
+
     }
   }
 </script>
 
 <style scoped>
-
+  .nav-bar{
+    position: absolute;
+    top: 0px;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    display: flex;
+    flex-direction: row;
+    border-bottom: 2px white solid;
+  }
+  .nav-bar > div{
+    display: flex;
+    border: 1px blue solid;
+    height: 70px;
+    color: white;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    font-size: small;
+  }
+  .nav-bar-item{
+    width: 50px;
+  }
+  #nav-icon{
+    width: 100px;
+    margin-left: 30px;
+    margin-right: 30px;
+  }
+  #search-bar{
+    width: 400px;
+  }
+  #user-icon{
+    position: absolute;
+    right: 0px;
+    width: 120px;
+    margin-right: 40px;
+  }
 </style>
