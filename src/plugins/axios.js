@@ -39,6 +39,7 @@ _axios.interceptors.response.use(
   }
 );
 
+/* eslint-disable */
 Plugin.install = function(Vue, options) {
   Vue.axios = _axios;
   window.axios = _axios;
@@ -55,7 +56,7 @@ Plugin.install = function(Vue, options) {
     },
   });
 };
-
+/* eslint-enable */
 Vue.use(Plugin)
 
 export default Plugin;
